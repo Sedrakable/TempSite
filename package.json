@@ -1,0 +1,83 @@
+{
+  "type": "module",
+  "name": "setoxarts",
+  "version": "0.1.0",
+  "homepage": "https://setoxarts.com",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@sanity/client": "^6.12.1",
+    "@sanity/image-url": "^1.0.2",
+    "@splidejs/react-splide": "^0.7.12",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^1.6.7",
+    "classnames": "^2.3.2",
+    "framer-motion": "^10.15.1",
+    "gh-pages": "^6.0.0",
+    "is-svg": "^5.0.0",
+    "jotai": "^2.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "sanity-image": "^0.1.7",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "backup": "node src/api/dataBackup.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-syntax-flow": "^7.22.5",
+    "@babel/plugin-transform-react-jsx": "^7.22.5",
+    "@svgr/webpack": "^8.0.1",
+    "@testing-library/dom": "^9.3.1",
+    "@types/node": "^20.5.4",
+    "@types/node-sass": "^4.11.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@types/react-lazy-load-image-component": "^1.6.3",
+    "@types/react-modal": "^3.16.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "react-modal": "^3.16.1",
+    "typescript": "^5.1.6"
+  }
+}

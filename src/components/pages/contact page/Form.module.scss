@@ -1,0 +1,68 @@
+@import "../../../css/mixins.scss";
+
+.form {
+  @include flexColumn;
+
+  gap: var(--pad-3);
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $desktop) {
+    justify-content: flex-start;
+  }
+
+  .info {
+    @include flexColumn;
+
+    width: 100%;
+    gap: var(--pad-3);
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &.contactForm {
+    @media (min-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+}
+
+input,
+textarea {
+  @include fontParagraph();
+
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--yellow);
+  padding: var(--pad-4) var(--pad-3) var(--pad-3) var(--pad-3);
+  margin: 0;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--yellow);
+  }
+}
+
+textarea {
+  min-height: var(--pad-9);
+  overflow-y: hidden;
+  resize: vertical;
+}
+
+::-webkit-resizer {
+  $size: 8px;
+  background: none;
+  width: 0;
+  height: 0;
+  border-bottom: $size solid var(--yellow);
+  border-right: $size solid var(--yellow);
+  border-left: $size solid transparent;
+  border-top: $size solid transparent;
+}
