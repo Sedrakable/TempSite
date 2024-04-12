@@ -1,8 +1,7 @@
 {
   "type": "module",
-  "name": "setoxarts",
+  "name": "seto-template",
   "version": "0.1.0",
-  "homepage": "https://setoxarts.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
