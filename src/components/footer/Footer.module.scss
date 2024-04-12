@@ -3,16 +3,16 @@
 @mixin vars() {
   --top-gap: var(--pad-6);
   --container-gap: var(--pad-5);
-  --logo-width: 80%;
+  --logo-width: 50px;
   --border-width: 4px;
   @media (min-width: $tablet) {
     --top-gap: var(--pad-6);
-    --logo-width: 300px;
+    --logo-width: 60px;
   }
 
   @media (min-width: $laptop) {
     --top-gap: var(--pad-7);
-    --logo-width: 384px;
+    --logo-width: 80px;
   }
 
   @media (min-width: $desktop) {
@@ -36,7 +36,7 @@
 
   width: 100vw;
   background: var(--black);
-  border-top: var(--border-width) solid var(--yellow);
+  border-top: var(--border-width) solid var(--primary);
 
   .container {
     width: var(--screen-width-large);
@@ -48,13 +48,18 @@
       p {
         text-decoration: underline;
         // &:hover {
-        //   color: var(--yellow);
+        //   color: var(--primary);
         // }
       }
     }
-    .logo {
-      position: relative;
-      width: var(--logo-width);
+    .logoWrapper {
+      .logo {
+        position: relative;
+        height: var(--logo-width);
+        img {
+          height: 100%;
+        }
+      }
     }
 
     .links {
@@ -62,6 +67,9 @@
       row-gap: var(--pad-2) !important;
       @media (min-width: $laptop) {
         justify-content: flex-end !important;
+      }
+      p {
+        width: auto;
       }
     }
   }

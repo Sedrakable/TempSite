@@ -1,0 +1,325 @@
+{
+  "images": [
+    {
+      "_key": "958c87c7c58e",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-6377e2aea20565fd26afc61f311e1c514c2ff4bf-8688x5792-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Steak"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-096b1d87654dd0b60b382f623a1c9652045be4ca-3444x2296-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Pasta",
+      "_key": "d9cec7064914"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-847250d558c693aece8ed421866354832d3c5567-5596x3731-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Tables",
+      "_key": "1e8cff6caafe"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8e331644aa5c12817eb3371853f7492d0217182a-2592x3888-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Apetisers",
+      "_key": "f0f6a936711e"
+    },
+    {
+      "alt": "Cutting food",
+      "_key": "7a950903eea4",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-2fda7901cf8d38ee03e09ca1c85ded41e66a315a-3648x5472-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage"
+    },
+    {
+      "alt": "Pouring wine",
+      "_key": "2ea7f137762a",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-fc243db33bee60c532655434ff8349c9a2d1efba-3456x5184-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage"
+    },
+    {
+      "_key": "1f7f72385a99",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-c7d6d92f52438d5238345891c690acb0de4e9202-5472x3648-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Woman eating"
+    }
+  ],
+  "work": {
+    "works": [
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-39395ed86495b42d0a71da1d49a4e49110a9f193-3571x5356-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Kebabs"
+        },
+        "primaryLink": {
+          "_type": "cta",
+          "text": "View Platters "
+        },
+        "_createdAt": "2024-04-12T02:48:00Z",
+        "_rev": "DtLl17My9OUMkN4Oy8Gwe3",
+        "_id": "01e68e16-04dd-405b-a2ac-0e0278410a77",
+        "_updatedAt": "2024-04-12T02:57:40Z",
+        "title": "Big Platters for the whole group",
+        "desc": "Nam volutpat ipsum vitae nisi blandit pellentesque. In hac habitasse platea dictumst. Quisque fringilla porta eros, sit amet luctus ante aliquam id. Duis sit amet gravida massa, in vulputate nisl. Donec eros justo, vestibulum consequat tellus sed, vulputate consectetur enim. Pellentesque sit amet tortor congue, hendrerit ante eget, malesuada libero. ",
+        "_type": "work"
+      },
+      {
+        "_updatedAt": "2024-04-12T02:49:18Z",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Food",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-8e331644aa5c12817eb3371853f7492d0217182a-2592x3888-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "title": "Delicious Appetisers that keep you wanting more ",
+        "primaryLink": {
+          "_type": "cta",
+          "text": "View Appetisers "
+        },
+        "_id": "c87a921c-406e-4304-8c44-98b029a390f0",
+        "desc": "Sed malesuada scelerisque rhoncus. Donec congue turpis nulla, eget feugiat elit fringilla id. Phasellus ornare elementum hendrerit. Maecenas fermentum convallis consectetur.",
+        "_createdAt": "2024-04-12T02:49:18Z",
+        "_rev": "DtLl17My9OUMkN4Oy8G75D",
+        "_type": "work"
+      },
+      {
+        "_rev": "DtLl17My9OUMkN4Oy8GVlM",
+        "primaryLink": {
+          "_type": "cta",
+          "text": "View Pastas"
+        },
+        "_createdAt": "2024-04-12T02:53:11Z",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-096b1d87654dd0b60b382f623a1c9652045be4ca-3444x2296-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "Pasta"
+        },
+        "title": "Fanciest Pastas you have ever tasted",
+        "_updatedAt": "2024-04-12T02:53:11Z",
+        "desc": "Duis sit amet gravida massa, in vulputate nisl. Donec eros justo, vestibulum consequat tellus sed, vulputate consectetur enim. Pellentesque sit amet tortor congue, hendrerit ante eget, malesuada libero. Suspendisse tempor tellus velit, non vehicula ligula blandit ac. In pulvinar eu urna at mattis.",
+        "_type": "work",
+        "_id": "f766912d-6092-4a3e-8f83-090749a68ddf"
+      },
+      {
+        "desc": "Duis sit amet gravida massa, in vulputate nisl. Donec eros justo, vestibulum consequat tellus sed, vulputate consectetur enim. Pellentesque sit amet tortor congue, hendrerit ante eget, malesuada libero. Suspendisse tempor tellus velit, non vehicula ligula blandit ac. In pulvinar eu urna at mattis.",
+        "_createdAt": "2024-04-12T02:54:04Z",
+        "_rev": "L5GSZvp7J2uKtijbIAfR8k",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6377e2aea20565fd26afc61f311e1c514c2ff4bf-8688x5792-jpg"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Steak"
+        },
+        "_type": "work",
+        "_id": "8b8efbe1-2267-48ae-be6e-6a32b663b715",
+        "title": "These Steaks are as juicy as they come",
+        "_updatedAt": "2024-04-12T02:54:04Z",
+        "primaryLink": {
+          "_type": "cta",
+          "text": "View Steaks"
+        }
+      }
+    ]
+  },
+  "_rev": "DtLl17My9OUMkN4Oy8J8fv",
+  "_createdAt": "2024-04-11T23:05:37Z",
+  "hero": {
+    "quote": {
+      "_type": "quote",
+      "leftText": "Fresh",
+      "hiddenTitle": "Resto Quote",
+      "_id": "346369a1-154d-4b89-bee5-b26aaab01f80",
+      "_updatedAt": "2024-04-11T23:14:58Z",
+      "rightText": "Tasty",
+      "_createdAt": "2024-04-11T23:14:58Z",
+      "_rev": "DtLl17My9OUMkN4Oy7alMr"
+    },
+    "subTitle": "Authentic and Fresh",
+    "_type": "hero",
+    "customImage": {
+      "alt": "Restaurant Tables",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-847250d558c693aece8ed421866354832d3c5567-5596x3731-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage"
+    },
+    "title": "Big Long Title Thingy",
+    "ctas": {
+      "cta2": {
+        "_type": "cta",
+        "text": "Menu"
+      },
+      "cta1": {
+        "_type": "localLink",
+        "text": "Reserve"
+      }
+    },
+    "desc": "Donec iaculis varius est, sed consectetur odio tincidunt laoreet. Nulla accumsan, erat quis semper faucibus, libero tortor egestas erat, sit amet dapibus enim leo at ipsum."
+  },
+  "_id": "a370690f-967b-452c-84ae-bd51aa479c60",
+  "services": {
+    "_rev": "EKh3P2lPm1wbYuwVTsabIr",
+    "_type": "servicesBlock",
+    "_id": "0e6e9153-9657-4d74-ac2f-0a65c19569b6",
+    "services": [
+      {
+        "_type": "service",
+        "customImage": {
+          "alt": "Woman eating",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-c7d6d92f52438d5238345891c690acb0de4e9202-5472x3648-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "description": "Vivamus pretium, massa vitae tempor elementum, magna mauris accumsan dolor, sit amet dictum enim ante ac neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer accumsan iaculis risus nec fringilla. In placerat urna ut tellus dapibus.",
+        "_key": "0a3b6fe3039d",
+        "title": "Cozy Atmosphere"
+      },
+      {
+        "_type": "service",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-fc243db33bee60c532655434ff8349c9a2d1efba-3456x5184-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Pouring Wine"
+        },
+        "description": "Vivamus pretium, massa vitae tempor elementum, magna mauris accumsan dolor, sit amet dictum enim ante ac neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer accumsan iaculis risus nec fringilla. In placerat urna ut tellus dapibus, a rhoncus eros tincidunt. Cras eleifend bibendum odio quis finibus. Nullam et orci nisi. Nullam nec nibh ut ipsum convallis commodo quis non ex.",
+        "_key": "390bd8436128",
+        "title": "Amazing Service"
+      },
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-2fda7901cf8d38ee03e09ca1c85ded41e66a315a-3648x5472-jpg"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Cutting food"
+        },
+        "description": "Vivamus pretium, massa vitae tempor elementum, magna mauris accumsan dolor, sit amet dictum enim ante ac neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer accumsan iaculis risus nec fringilla. In placerat urna ut tellus dapibus, a rhoncus eros tincidunt. Cras eleifend bibendum odio quis finibus. Nullam et orci nisi. Nullam nec nibh ut ipsum convallis commodo quis non ex.",
+        "_key": "5e4d8a549405",
+        "title": "Fresh Food",
+        "_type": "service"
+      }
+    ],
+    "_updatedAt": "2024-04-12T01:17:54Z",
+    "_createdAt": "2024-04-12T01:13:27Z"
+  },
+  "_updatedAt": "2024-04-12T03:23:50Z",
+  "values": {
+    "hiddenTitle": "Values",
+    "_id": "60ce41a5-97b7-4f9f-b1c2-60dc5a7ab3c3",
+    "_updatedAt": "2024-04-12T03:08:29Z",
+    "_createdAt": "2024-04-12T03:08:29Z",
+    "values": [
+      {
+        "_type": "value",
+        "_key": "980db81a7deb",
+        "title": "Excellence",
+        "desc": "We are committed to delivering nothing short of excellence in every aspect of our service. From the quality of ingredients to the presentation of dishes, we strive for perfection to provide our guests with an exceptional dining experience."
+      },
+      {
+        "_type": "value",
+        "_key": "00ac2870a517",
+        "title": "Innovation",
+        "desc": "We embrace innovation in both our culinary creations and our service approach. Constantly pushing boundaries and exploring new flavors, techniques, and experiences, we aim to surprise and delight our guests with unique and memorable dining adventures."
+      },
+      {
+        "_type": "value",
+        "_key": "69b6faec7628",
+        "title": "Sustainability",
+        "desc": "Sustainability is at the heart of everything we do. From sourcing locally grown produce to minimizing food waste and reducing our environmental footprint, we are dedicated to preserving our planet while still delivering exquisite cuisine to our guests."
+      },
+      {
+        "_type": "value",
+        "_key": "3b38d8d9189e",
+        "title": "Hospitality",
+        "desc": "Our team is dedicated to providing warm, attentive, and personalized service to each and every guest who walks through our doors. We believe in the art of hospitality, creating a welcoming atmosphere where guests feel valued, comfortable, and truly cared for throughout their dining journey."
+      }
+    ],
+    "_rev": "DtLl17My9OUMkN4Oy8HlMg",
+    "_type": "valuesBlock"
+  },
+  "_type": "homePage",
+  "title": "Home Page"
+}

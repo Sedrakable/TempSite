@@ -41,10 +41,10 @@ export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
       className={styles.langWrapper}
       onClick={() => langClick()}
     >
-      <Paragraph level="big" color="yellow">
+      <Paragraph level="big" color="primary">
         {lang.toUpperCase()}
       </Paragraph>
-      <Icon icon="internet" size="regular" />
+      <Icon icon="internet" size="regular" color="primary" />
     </FlexDiv>
   );
 };

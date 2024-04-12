@@ -1,0 +1,36 @@
+{
+  "_type": "footer",
+  "trademark": "@2024 Wine & Dine",
+  "_id": "d0529c96-efda-4d04-9401-77fbc1ec8d43",
+  "socials": {
+    "_id": "976e83b4-d01f-4e63-a06f-10d81d1a49e4",
+    "title": "Socials",
+    "_updatedAt": "2024-04-12T00:44:39Z",
+    "_createdAt": "2024-04-12T00:41:15Z",
+    "_rev": "EKh3P2lPm1wbYuwVTsZjAo",
+    "_type": "socials",
+    "links": [
+      {
+        "_type": "cta",
+        "text": "instagram",
+        "_key": "6793a748d2ae"
+      },
+      {
+        "text": "facebook",
+        "_key": "7a79514a265b",
+        "_type": "cta"
+      }
+    ]
+  },
+  "_updatedAt": "2024-04-12T00:41:35Z",
+  "legals": [
+    {
+      "title": "Terms And Conditions"
+    },
+    {
+      "title": "Privacy Policy"
+    }
+  ],
+  "_createdAt": "2024-04-12T00:38:25Z",
+  "_rev": "DtLl17My9OUMkN4Oy7zWZ7"
+}

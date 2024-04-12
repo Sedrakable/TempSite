@@ -41,7 +41,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
           </FlexDiv>
         )}
         {/* {cta && (
-          <Button variant="fancy" href={`/${lang}${LocalPaths.CONTACT}`}>
+          <Button variant="primary" href={`/${lang}${LocalPaths.CONTACT}`}>
             {translations.buttons.workWithMe}
           </Button>
         )} */}

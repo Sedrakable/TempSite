@@ -23,7 +23,7 @@ export const Tag: React.FC<PropsWithChildren<TagProps>> = ({
       <Paragraph
         level="small"
         weight="regular"
-        color={chosen ? "yellow" : "grey"}
+        color={chosen ? "primary" : "grey"}
       >
         {children}
       </Paragraph>

@@ -21,12 +21,12 @@
 }
 
 .cursive {
-  @include fontHeaderCaveat;
+  @include fontHeaderCursive;
 
   font-weight: 600;
   font-size: 28px;
   line-height: 28px;
-  color: var(--yellow);
+  color: var(--primary);
 }
 
 .fancyParagraph {

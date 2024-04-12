@@ -3,14 +3,14 @@ import fs from "fs";
 import { generateQueries } from "./generateSanityQueries.js";
 
 const client = createClient({
-  projectId: "9mwoew4a",
+  projectId: 'hngtneus',
   dataset: "production", // Usually 'production'
   useCdn: true, // Set to true for production
-  apiVersion: "2024-01-31",
+  apiVersion: "2024-04-11",
 });
 
 
-const backupData = async (query, lang = "en") => {
+const backupData = async (query) => {
   try {
     const data = await client.fetch(query);
 
@@ -18,14 +18,14 @@ const backupData = async (query, lang = "en") => {
     if (Array.isArray(data)) {
       // Iterate over each element of the array
       data.forEach((element, index) => {
-        const backupFilePath = `src/api/backups/${lang}/backup-${
+        const backupFilePath = `src/api/backups/backup-${
           element._type
         }-${index}.json`;
         fs.writeFileSync(backupFilePath, JSON.stringify(element, null, 2));
       });
     } else {
       // If data is not an array, create a single JSON file
-      const backupFilePath = `src/api/backups/${lang}/backup-${
+      const backupFilePath = `src/api/backups/backup-${
         data._type
       }.json`;
       fs.writeFileSync(backupFilePath, JSON.stringify(data, null, 2));
@@ -37,27 +37,19 @@ const backupData = async (query, lang = "en") => {
   }
 };
 
-const backupDataForLang = (lang) => {
+const backupDataForLang = () => {
   const {
     navbarQuery,
-    aboutQuery,
-    contactQuery,
-    footerQuery,
     homeQuery,
-    legalQuery,
-    notFoundQuery,
-    serviceQuery,
-  } = generateQueries(lang);
+    footerQuery,
+    settingsQuery,
+  } = generateQueries();
   
-  backupData(navbarQuery, lang);
-  backupData(aboutQuery, lang);
-  backupData(contactQuery, lang);
-  backupData(footerQuery, lang);
-  backupData(homeQuery, lang);
-  backupData(legalQuery, lang);
-  backupData(notFoundQuery, lang);
-  backupData(serviceQuery, lang);
+  backupData(navbarQuery);
+  backupData(homeQuery);
+  backupData(footerQuery);
+  backupData(settingsQuery);
+
 };
 
-const langs = ["en", "fr"];
-langs.forEach((lang) => backupDataForLang(lang));
+backupDataForLang()

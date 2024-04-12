@@ -9,7 +9,7 @@
     .textWrapper {
       h5 {
         transition: 100ms;
-        color: var(--yellow) !important;
+        color: var(--primary) !important;
       }
     }
   }
@@ -19,11 +19,11 @@
     max-width: 100%;
     width: 100%;
     path {
-      fill: var(--yellow);
+      fill: var(--primary);
     }
   }
   .dropdown {
-    background: var(--yellow);
+    background: var(--primary);
     width: 100%;
     position: absolute;
     bottom: 0;

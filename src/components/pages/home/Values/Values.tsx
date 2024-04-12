@@ -23,13 +23,19 @@ const Value: React.FC<IValue & { number: string }> = ({
       <FlexDiv
         gapArray={[3]}
         width100
-        flex={{ x: "flex-start" }}
+        flex={{ x: "flex-start", y: "flex-end" }}
         className={styles.head}
       >
-        <Heading font="Seto" level="3" as="h3" color="yellow">
+        <Heading font="Seto" level="3" as="h3" color="primary">
           {number}
         </Heading>
-        <Heading font="Seto" level="4" as="h4" className={styles.title}>
+        <Heading
+          font="Seto"
+          level="4"
+          as="h4"
+          className={styles.title}
+          paddingBottomArray={[1]}
+        >
           {title}
         </Heading>
       </FlexDiv>

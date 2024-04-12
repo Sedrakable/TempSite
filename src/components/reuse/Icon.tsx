@@ -71,7 +71,7 @@ const isIconDefinition = (
 export const Icon: React.FC<IconProps> = ({
   icon,
   rotate,
-  color = "yellow",
+  color = "primary",
   size = "regular",
   className,
 }) => {

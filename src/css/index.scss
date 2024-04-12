@@ -11,13 +11,8 @@
   --white: #ffffff;
   --black: #0f0f0f;
   --grey: #bcbcbc;
-  --yellow: #fec301;
-  --gold-grad: linear-gradient(
-    90deg,
-    var(--yellow) 0%,
-    #febb01 50%,
-    var(--yellow) 100%
-  );
+  --primary: #fec301;
+  --button-border-radius: 6px;
   --pad-0: 0px;
   --pad-1: 5px;
   --pad-2: 10px;
@@ -31,36 +26,36 @@
   --pad-10: 180px;
   --pad-11: 240px;
 
-  --heading-seto-h1: 80px;
-  --heading-seto-h2: 64px;
-  --heading-seto-h3: 48px;
-  --heading-seto-h4: 32px;
-  --heading-seto-h5: 20px;
+  --heading-main-h1: 128px;
+  --heading-main-h2: 64px;
+  --heading-main-h3: 48px;
+  --heading-main-h4: 32px;
+  --heading-main-h5: 24px;
 
-  --heading-seto-h1-line: 128px;
-  --heading-seto-h2-line: 80px;
-  --heading-seto-h3-line: 64px;
-  --heading-seto-h4-line: 48px;
-  --heading-seto-h5-line: 24px;
+  --heading-main-h1-line: 128px;
+  --heading-main-h2-line: 64px;
+  --heading-main-h3-line: 48px;
+  --heading-main-h4-line: 32px;
+  --heading-main-h5-line: 24px;
 
-  --heading-caveat-h1: 128px;
-  --heading-caveat-h2: 80px;
-  --heading-caveat-h3: 64px;
-  --heading-caveat-h4: 48px;
-  --heading-caveat-h5: 30px;
+  --heading-cursive-h1: 128px;
+  --heading-cursive-h2: 80px;
+  --heading-cursive-h3: 64px;
+  --heading-cursive-h4: 48px;
+  --heading-cursive-h5: 30px;
 
-  --heading-caveat-h1-line: 128px;
-  --heading-caveat-h2-line: 80px;
-  --heading-caveat-h3-line: 64px;
-  --heading-caveat-h4-line: 48px;
-  --heading-caveat-h5-line: 30px;
+  --heading-cursive-h1-line: 128px;
+  --heading-cursive-h2-line: 80px;
+  --heading-cursive-h3-line: 64px;
+  --heading-cursive-h4-line: 48px;
+  --heading-cursive-h5-line: 30px;
 
   --paragraph-big: 32px;
   --paragraph-regular: 24px;
   --paragraph-small: 20px;
-  --paragraph-big-line: 34px;
-  --paragraph-regular-line: 28px;
-  --paragraph-small-line: 22px;
+  --paragraph-big-line: 38px;
+  --paragraph-regular-line: 30px;
+  --paragraph-small-line: 24px;
 
   --navbar-height: 64px;
   --screen-width-large: calc(100vw - var(--pad-6));

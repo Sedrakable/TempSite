@@ -4,27 +4,22 @@ import TabButton from "./TabButton";
 import { useWindowResize } from "../../helpers/useWindowResize";
 import { IconButton } from "../reuse/IconButton";
 import cn from "classnames";
-import { Link } from "../reuse/Link";
 import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as Logo } from "../../assets/illu/LogoSmall.svg";
 import { Button } from "../reuse/Button";
-import { ICta, INavBar, INavLink, LocalPaths } from "../../data.d";
-import { LangSwitcher, LangType, langData } from "./LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
-import { getTranslations } from "../../helpers/langUtils";
-import { Sidebar, sidebarData } from "./Sidebar";
+import { ICta, INavBar, INavLink } from "../../data.d";
+import { LangSwitcher } from "./LangSwitcher/LangSwitcher";
+import { SanityImage } from "../reuse/SanityImage/SanityImage";
 
 export const isCta = (link: INavLink | ICta): link is ICta => {
   return (link as ICta).link !== undefined;
 };
 
-export const Navbar: React.FC<INavBar> = ({ links }) => {
+export const Navbar: React.FC<INavBar> = ({ links, logo, lang }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
 
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const [lang] = useAtom(langData);
-  const [, setSidebar] = useAtom(sidebarData);
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -50,7 +45,9 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           flex={{ x: "space-between", y: "center" }}
           height100
         >
-          <LogoLink lang={lang} />
+          <div className={styles.logo}>
+            <SanityImage {...logo} res={30} />
+          </div>
 
           <FlexDiv
             flex={{ x: "space-between", y: "center" }}
@@ -58,32 +55,20 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           >
             {!isMobile && (
               <FlexDiv gapArray={[5, 4, 5, 6]}>
-                {links?.map((link: INavLink | ICta, key) => {
-                  if (key === links.length - 1 && isCta(link)) {
+                {links?.map((link: string, key) => {
+                  if (key === links.length - 1) {
                     return (
-                      <Button
-                        variant="fancy"
-                        small={isMobile}
-                        path={`/${lang}${LocalPaths.CONTACT}`}
-                        key={key}
-                      >
-                        {link.text}
+                      <Button variant="primary" small={isMobile} key={key}>
+                        {link}
                       </Button>
                     );
                   }
                   return (
-                    !isMobileOrTablet &&
-                    (isCta(link) ? (
-                      <TabButton
-                        key={key}
-                        className={styles.tab}
-                        path={`/${lang}${link.link!}`}
-                      >
-                        {link.text}
+                    !isMobileOrTablet && (
+                      <TabButton key={key} className={styles.tab}>
+                        {link}
                       </TabButton>
-                    ) : (
-                      dropDown(link, lang, key)
-                    ))
+                    )
                   );
                 })}
               </FlexDiv>
@@ -91,7 +76,6 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
             {!isMobile && <LangSwitcher />}
             {isMobileOrTablet && (
               <IconButton
-                onClick={() => setSidebar(true)}
                 iconProps={{ icon: "burger", size: "regular" }}
                 background="white"
               />
@@ -99,34 +83,6 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           </FlexDiv>
         </FlexDiv>
       </div>
-      {isMobileOrTablet && <Sidebar links={links} lang={lang} />}
     </>
   );
 };
-
-// Helper components
-export const LogoLink: React.FC<{ lang: LangType }> = ({ lang }) => {
-  const translations = getTranslations(lang);
-  const [, setSidebar] = useAtom(sidebarData);
-  return (
-    <Link
-      path={`/${lang}${LocalPaths.HOME}`}
-      className={styles.logo}
-      aria-label={translations.nav.home}
-      onClick={() => setSidebar(false)}
-    >
-      <Logo />
-    </Link>
-  );
-};
-
-export const dropDown = (navLink: INavLink, lang: LangType, key?: number) => (
-  <TabButton
-    key={key}
-    className={styles.tab}
-    path={`/${lang}${LocalPaths.SERVICE}`}
-    dropdown={navLink.ctaArray}
-  >
-    {navLink.title}
-  </TabButton>
-);

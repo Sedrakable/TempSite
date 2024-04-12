@@ -1,17 +1,14 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import styles from "./Form.module.scss";
 import cn from "classnames";
 import { Button } from "../../reuse/Button";
-import { FancyText } from "../../reuse/FancyText";
 import FlexDiv from "../../reuse/FlexDiv";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { IForm } from "../../../data";
 import { useAtom } from "jotai";
 import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../helpers/langUtils";
 
-export const Form: React.FC<IForm> = ({ desc }) => {
+export const Form: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const { isMobileOrTablet, isLaptop } = useWindowResize();
   const [budget, setBudget] = useState<string>("");
@@ -33,16 +30,6 @@ export const Form: React.FC<IForm> = ({ desc }) => {
       alert("Please fill out all required fields.");
       return;
     }
-    emailjs
-      .sendForm("gmail", "contact-seto", form.current!, "bVxK7PZwLIutCAifw")
-      .then(
-        (result) => {
-          console.log("sent");
-        },
-        (error) => {
-          console.error("didint work", error);
-        }
-      );
   };
   const handleKeyDown = (e: any) => {
     e.target.style.height = "inherit";
@@ -76,7 +63,6 @@ export const Form: React.FC<IForm> = ({ desc }) => {
       }}
       gapArray={[4]}
     >
-      <FancyText {...desc} mode="paragraph" textAlign="center" />
       <form
         ref={form}
         className={cn(styles.form, styles.contactForm)}
@@ -122,7 +108,7 @@ export const Form: React.FC<IForm> = ({ desc }) => {
           required
         />
 
-        <Button variant="fancy" disabled={!formValid}>
+        <Button variant="secondary" disabled={!formValid}>
           {translations.buttons.send}
         </Button>
       </form>

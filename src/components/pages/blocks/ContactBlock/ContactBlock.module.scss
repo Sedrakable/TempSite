@@ -1,0 +1,15 @@
+@import "../../../../css/mixins.scss";
+
+.container {
+  @media (min-width: $laptop) {
+    flex-direction: row !important;
+  }
+
+  > * {
+    flex: 1;
+  }
+  .map {
+    border: none;
+    width: 100%;
+  }
+}

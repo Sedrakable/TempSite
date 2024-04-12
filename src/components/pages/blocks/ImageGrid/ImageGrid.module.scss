@@ -4,35 +4,22 @@
   --row-height: 300px;
   --ratio: 3 / 4;
   --gap: 10px;
-  --number-of-rows: 20;
+  --number-of-rows: 5;
   @media (min-width: $tablet) {
     --row-height: 250px;
-    --number-of-rows: 12;
+    --number-of-rows: 3;
   }
 
   @media (min-width: $laptop) {
     --row-height: 300px;
-    --number-of-rows: 9;
+    --number-of-rows: 2;
   }
 
   @media (min-width: $desktop) {
     --row-height: 400px;
-    --number-of-rows: 9;
+    --number-of-rows: 2;
   }
 }
-
-.version_1 {
-  height: calc(
-    (var(--row-height) * var(--ratio) + (var(--gap) / 2)) *
-      var(--number-of-rows)
-  );
-  .wrapper {
-    position: absolute;
-    top: 0;
-    background-color: var(--black);
-  }
-}
-
 .version_2 {
   .imgWrapper {
     border-radius: 5px;
@@ -45,11 +32,19 @@
   overflow: hidden;
   width: 100%;
   position: relative;
+  height: calc(
+    (var(--row-height) * var(--ratio) + (var(--gap) / 2)) *
+      var(--number-of-rows)
+  );
 
   .wrapper {
     display: grid !important;
     justify-content: unset !important;
     align-items: unset !important;
+
+    position: absolute;
+    top: 0;
+    background-color: var(--black);
 
     grid-template-columns: repeat(auto-fit, minmax(var(--row-height), 1fr));
     grid-auto-rows: calc(var(--row-height) * var(--ratio));
@@ -80,7 +75,7 @@
       //   grid-row: span 1;
       //   grid-column: span 1;
 
-      //   background: linear-gradient(45deg, var(--white), var(--yellow));
+      //   background: linear-gradient(45deg, var(--white), var(--primary));
       //   background-size: 200%;
 
       //   animation: pulsate 2s infinite linear alternate-reverse;

@@ -5,13 +5,14 @@ import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
+import { ColorType } from "./Heading";
 
 export interface ParagraphProps {
   children: string | JSX.Element;
   level: "small" | "regular" | "big";
   textAlign?: CSSProperties["textAlign"];
   paddingBottomArray?: SpacingArrayType;
-  color?: "white" | "black" | "grey" | "yellow";
+  color?: ColorType;
   weight?: "weak" | "regular";
   capitalise?: boolean;
   clickable?: boolean;
@@ -19,8 +20,8 @@ export interface ParagraphProps {
 }
 
 const fontWeights = {
-  weak: 300,
-  regular: 400,
+  weak: 200,
+  regular: 300,
 };
 
 const processChildren = (children: string | JSX.Element) => {

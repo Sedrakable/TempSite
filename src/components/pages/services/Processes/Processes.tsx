@@ -37,7 +37,7 @@ const Process: React.FC<IProcessProps> = ({
       gapArray={[4, 5, 5, 6]}
     >
       <FlexDiv className={styles.number}>
-        <Heading font="Seto" level="2" as="h2" color="yellow">
+        <Heading font="Seto" level="2" as="h2" color="primary">
           {(number + 1).toString()}
         </Heading>
       </FlexDiv>

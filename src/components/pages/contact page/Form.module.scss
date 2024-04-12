@@ -40,13 +40,13 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   border: none;
-  border-bottom: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--primary);
   padding: var(--pad-4) var(--pad-3) var(--pad-3) var(--pad-3);
   margin: 0;
 
   &:focus-visible {
     outline: none;
-    border: 2px solid var(--yellow);
+    border: 2px solid var(--primary);
   }
 }
 
@@ -61,8 +61,8 @@ textarea {
   background: none;
   width: 0;
   height: 0;
-  border-bottom: $size solid var(--yellow);
-  border-right: $size solid var(--yellow);
+  border-bottom: $size solid var(--primary);
+  border-right: $size solid var(--primary);
   border-left: $size solid transparent;
   border-top: $size solid transparent;
 }

@@ -2,6 +2,19 @@ export interface ICta {
   text: string;
   link?: string;
 }
+export interface ISettings {
+  colors: IColorTheme;
+  buttonBorderRadius: number;
+}
+export interface IColorTheme {
+  primary: IHexType;
+  dark: IHexType;
+  light: IHexType;
+}
+
+export interface IHexType {
+  hex: string;
+}
 
 export interface ICustomImage {
   alt: string;
@@ -26,8 +39,8 @@ export interface IFancyText {
 }
 
 export interface IHero {
-  subTitle?: IFancyText;
-  title: IFancyText;
+  subTitle?: string;
+  title: string;
   desc: string;
   customImage: ICustomImage;
   ctas?: {
@@ -48,10 +61,8 @@ export interface IServices {
 
 export interface IService {
   title: string;
-  path: string;
-  features: IFeatures;
-  processes: IProcesses;
-  price?: string;
+  description: string;
+  customImage: ICustomImage;
 }
 
 export interface IFeatures {
@@ -102,16 +113,10 @@ export interface IWorkBlock {
 }
 
 export interface IWork {
-  _id: string;
-  slug: ISlug;
-  thumbnailImage: ICustomImage;
-  customImages: ICustomImage[];
+  customImage: ICustomImage;
   title: string;
   desc: string;
   primaryLink: ICta;
-  secondaryLinks?: ICta[];
-  behanceProjectId?: string;
-  kickstarterProjectlink?: string;
 }
 
 export interface INavLink {
@@ -120,7 +125,9 @@ export interface INavLink {
 }
 
 export interface INavBar {
-  links: (INavLink | ICta)[];
+  logo: ICustomImage;
+  links: string[];
+  lang: string;
 }
 
 export interface ISocials {
@@ -143,10 +150,6 @@ export interface IFooter {
   legals: { title: string; path: string }[];
   trademark: string;
   socials: ISocials;
-}
-
-export interface IForm {
-  desc: IFancyText;
 }
 
 export interface INotFound {

@@ -2,59 +2,26 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import { Paragraph } from "../Paragraph";
-import { IHero, LocalPaths } from "../../../data.d";
+import { IHero } from "../../../data.d";
 import FlexDiv from "../FlexDiv";
-import { ReactComponent as Logo } from "../../../assets/illu/LogoBig.svg";
-import { FancyText } from "../FancyText";
+
 import { Button } from "../Button";
 import { Quote } from "../Quote";
 import { SanityImage } from "../SanityImage/SanityImage";
-import { useWindowResize } from "../../../helpers/useWindowResize";
-import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
+import { Heading } from "../Heading";
 
 export type VersionType = 1 | 2;
 
-interface HeroProps extends IHero {
-  version?: VersionType;
-}
-
-export const Hero: React.FC<HeroProps> = ({
+export const Hero: React.FC<IHero> = ({
   customImage,
   desc,
   title,
   ctas,
   subTitle,
   quote,
-  version = 1,
 }) => {
-  const { isMobileOrTablet } = useWindowResize();
-  const [lang] = useAtom(langData);
   return (
     <div className={cn(styles.hero)}>
-      {!isMobileOrTablet && (
-        <div className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </div>
-      )}
-
-      {version === 1 && (
-        <FlexDiv
-          className={styles.left}
-          padding={{
-            horizontal: [3, 8, 0],
-            vertical: [0, 5, 0],
-          }}
-          id="hero-left"
-        >
-          <Logo />
-        </FlexDiv>
-      )}
-      {isMobileOrTablet && version === 1 && (
-        <div className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </div>
-      )}
       <FlexDiv className={styles.right}>
         <SanityImage
           image={customImage?.image}
@@ -69,42 +36,52 @@ export const Hero: React.FC<HeroProps> = ({
         >
           <FlexDiv
             flex={{ direction: "column", x: "flex-start" }}
-            gapArray={[3]}
+            gapArray={[1]}
             customStyle={{ zIndex: 1 }}
           >
-            {subTitle && <FancyText {...subTitle} mode="paragraph" />}
-            {title && <FancyText mode="heading" {...title} />}
+            {subTitle && (
+              <Heading
+                font="Cursive"
+                as="h5"
+                level="5"
+                color="primary"
+                paddingBottomArray={[2]}
+              >
+                {subTitle}
+              </Heading>
+            )}
+            {title && (
+              <Heading font="Seto" as="h1" level="1">
+                {title}
+              </Heading>
+            )}
             <Paragraph
               level="small"
               weight="weak"
               className={styles.description}
+              paddingBottomArray={[3]}
             >
               {desc}
             </Paragraph>
           </FlexDiv>
           {ctas && (
             <FlexDiv gapArray={[4]} flex={{ x: "flex-start" }} width100 wrap>
-              <Button
-                variant="fancy"
-                id="primary"
-                path={`/${lang}${LocalPaths.CONTACT}`}
-              >
+              <Button variant="primary" id="primary">
                 {ctas?.cta1.text}
               </Button>
               {ctas?.cta2 && (
                 <Button variant="secondary" id="secondary">
-                  {ctas?.cta1.text}
+                  {ctas?.cta2.text}
                 </Button>
               )}
             </FlexDiv>
           )}
         </FlexDiv>
       </FlexDiv>
-      {isMobileOrTablet && version === 2 && (
-        <div className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </div>
-      )}
+
+      <div className={styles.quote}>
+        <Quote {...quote} />
+      </div>
     </div>
   );
 };

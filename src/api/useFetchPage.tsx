@@ -6,7 +6,7 @@ export const client = createClient({
   projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
   dataset: process.env.REACT_APP_SANITY_DATASET, // Usually 'production'
   useCdn: true, // Set to true for production
-  apiVersion: "2024-01-31",
+  apiVersion: "2024-04-11",
 });
 
 // Get a pre-configured url-builder from your sanity client
@@ -19,7 +19,7 @@ export const urlFor = (source: any) => {
   return builder.image(source).auto("format");
 };
 
-export const useFetchPage = (query: string) => {
+export const useFetchPage = (query: string, destName: string) => {
   const [page, setPage] = useState(null);
   const [loading, setLoading] = useState(true); // Track loading state
 
@@ -28,8 +28,10 @@ export const useFetchPage = (query: string) => {
       try {
         // const data = null; // This is to test
         const data = await client.fetch(query);
+
         setPage(data);
       } catch (error) {
+        setPage(require(`./backups/backup-${destName}.json`));
         console.error("Error:", error);
       } finally {
         setLoading(false); // Update loading state when fetching is done
@@ -37,7 +39,7 @@ export const useFetchPage = (query: string) => {
     };
 
     fetchData();
-  }, [query]);
+  }, [query, destName]);
   // useEffect(() => {
   //   if (!loading) {
   //     if (!page) {

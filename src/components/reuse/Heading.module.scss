@@ -25,41 +25,41 @@
   text-decoration: none !important;
   &.clickable {
     &:hover {
-      color: var(--yellow) !important;
+      color: var(--primary) !important;
     }
   }
 }
 
 .seto {
-  @include fontHeaderSeto;
+  @include fontHeaderMain;
 
   @for $i from 1 through 3 {
     &.level#{$i} {
-      @include level(-seto, $i, $i + 1, $i + 1, $i + 2);
+      @include level(-main, $i, $i + 1, $i + 1, $i + 2);
     }
   }
   &.level4 {
-    @include level(-seto, 4, 4, 4, 5);
+    @include level(-main, 4, 4, 4, 5);
   }
   &.level5 {
-    @include level(-seto, 5, 5, 5, 5);
+    @include level(-main, 5, 5, 5, 5);
   }
 }
 
 .cursive {
-  @include fontHeaderCaveat;
+  @include fontHeaderCursive;
 
   font-weight: 600;
   @for $i from 1 through 3 {
     &.level#{$i} {
-      @include level(-caveat, $i, $i + 1, $i + 1, $i + 2);
+      @include level(-cursive, $i, $i + 1, $i + 1, $i + 2);
     }
   }
   &.level4 {
-    @include level(-caveat, 4, 4, 4, 5);
+    @include level(-cursive, 4, 4, 4, 5);
   }
   &.level5 {
-    @include level(-caveat, 5, 5, 5, 5);
+    @include level(-cursive, 5, 5, 5, 5);
   }
 }
 
@@ -70,12 +70,6 @@
   100% {
     background-position: 100% 50%;
   }
-}
-
-.gradient {
-  background: var(--gold-grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 h1,

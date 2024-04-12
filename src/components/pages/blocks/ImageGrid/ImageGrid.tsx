@@ -6,30 +6,25 @@ import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { shuffleArray } from "../../../../helpers/functions";
 
-interface ImageGridProps {
+export interface ImageGridProps {
   customImages: ICustomImage[];
-  version?: 1 | 2;
   maxImages?: number;
   randomize?: boolean;
 }
 
 export const ImageGrid: React.FC<ImageGridProps> = ({
   customImages,
-  version = 1,
   maxImages,
   randomize,
 }) => {
   const imagesToRender = React.useMemo(() => {
-    const images = randomize ? shuffleArray(customImages) : customImages;
-    return maxImages ? images.slice(0, maxImages) : images;
+    const images =
+      randomize && customImages ? shuffleArray(customImages) : customImages;
+    return maxImages ? images?.slice(0, maxImages) : images;
   }, [customImages, maxImages, randomize]);
 
   return (
-    <div
-      className={cn(styles.container, {
-        [styles[`version_${version}`]]: version,
-      })}
-    >
+    <div className={cn(styles.container)}>
       <FlexDiv
         className={styles.wrapper}
         width100

@@ -11,14 +11,12 @@ export interface SideContainerProps {
   title: string;
   desc: string;
   primaryCta?: ICta;
-  seconadryCta?: ICta;
 }
 
 export const SideContainer: React.FC<SideContainerProps> = ({
   title,
   desc,
   primaryCta,
-  seconadryCta,
 }) => {
   return (
     <div className={cn(styles.wrapper)}>
@@ -34,7 +32,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
           className={styles.text}
           gapArray={[2, 3]}
         >
-          <Heading font="Cursive" as="h4" level="4" color="yellow">
+          <Heading font="Cursive" as="h4" level="4" color="primary">
             {title}
           </Heading>
 
@@ -47,20 +45,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
           </Paragraph>
         </FlexDiv>
         <FlexDiv gapArray={[4]} wrap width100 flex={{ x: "flex-start" }}>
-          {primaryCta && (
-            <Button variant="primary" path={primaryCta?.link}>
-              {primaryCta?.text!}
-            </Button>
-          )}
-          {seconadryCta && (
-            <Button
-              variant="secondary"
-              href={seconadryCta?.link!}
-              target="_blank"
-            >
-              {seconadryCta?.text!}
-            </Button>
-          )}
+          {primaryCta && <Button variant="primary">{primaryCta?.text!}</Button>}
         </FlexDiv>
       </FlexDiv>
     </div>

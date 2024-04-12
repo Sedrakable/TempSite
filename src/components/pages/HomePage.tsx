@@ -1,19 +1,25 @@
 import React, { FC } from "react";
 
-import { IHero, IServices, IAbout, IValues, IWorkBlock } from "../../data.d";
+import {
+  IHero,
+  IServices,
+  IValues,
+  IWorkBlock,
+  ICustomImage,
+} from "../../data.d";
 import { Hero } from "../reuse/Hero/Hero";
 import { Values } from "./home/Values/Values";
 import { Services } from "./home/Services/Services";
 import { WorkSlider } from "./blocks/WorkSlider/WorkSlider";
-import { About } from "./blocks/About/About";
-import { Inspired } from "./blocks/Inspired/Inspired";
+import { ImageGrid } from "./blocks/ImageGrid/ImageGrid";
+import { ContactBlock } from "./blocks/ContactBlock/ContactBlock";
 
 export interface HomePageProps {
   hero: IHero;
+  work: IWorkBlock;
   services: IServices;
   values: IValues;
-  about: IAbout;
-  work: IWorkBlock;
+  images: ICustomImage[];
 }
 
 export const HomePage: FC<HomePageProps> = (props) => {
@@ -24,8 +30,8 @@ export const HomePage: FC<HomePageProps> = (props) => {
         <WorkSlider {...props?.work} />
         <Services {...props.services} />
         <Values {...props.values} />
-        <About content={{ ...props?.about?.content, cta: true }} />
-        <Inspired />
+        <ImageGrid customImages={props.images} randomize maxImages={8} />
+        <ContactBlock title="Contact" />
       </>
     )
   );

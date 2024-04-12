@@ -11,16 +11,9 @@ interface QuoteProps extends IQuote {
   version?: VersionType;
 }
 
-export const Quote: React.FC<QuoteProps> = ({
-  leftText,
-  rightText,
-  version,
-}) => {
+export const Quote: React.FC<QuoteProps> = ({ leftText, rightText }) => {
   return (
-    <FlexDiv
-      className={cn(styles.quote, { [styles.v2]: version === 2 })}
-      flex={{ x: "flex-start" }}
-    >
+    <FlexDiv className={cn(styles.quote)} flex={{ x: "flex-start" }}>
       <FlexDiv
         className={styles.left}
         flex={{ x: "flex-end" }}
@@ -39,7 +32,7 @@ export const Quote: React.FC<QuoteProps> = ({
         height100
         padding={{ left: [4, 5, 5, 6], right: [1, 8] }}
       >
-        <Heading font="Cursive" as="h3" level="3" color="yellow">
+        <Heading font="Cursive" as="h3" level="3" color="primary">
           {rightText}
         </Heading>
       </FlexDiv>

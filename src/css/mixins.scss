@@ -2,24 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@100..800&family=Sevillana&display=swap");
 
-@font-face {
-  font-family: "Seto";
-  src: url("../assets/fonts/Seto.otf") format("opentype");
-}
-
-@mixin fontHeaderSeto() {
-  font-family: "Seto", sans-serif;
+@mixin fontHeaderMain() {
+  font-family: "Helvetica Now", sans-serif;
   font-weight: normal;
 }
 
-@mixin fontHeaderCaveat() {
+@mixin fontHeaderCursive() {
   font-family: "Caveat", cursive;
   font-weight: normal;
 }
 
 @mixin fontParagraph() {
   font-family: "Anek Gurmukhi", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 @mixin flex($x: center, $y: center) {

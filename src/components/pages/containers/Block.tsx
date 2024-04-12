@@ -31,10 +31,14 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
         [styles.light]: variant !== "dark" && shadow,
       })}
       gapArray={[5, 6, 6, 7]}
-      padding={{ top: [6, 7, 7, 8], bottom: [8, 8, 8, 9] }}
+      padding={{
+        top: [6, 7, 7, 8],
+        bottom: [8, 8, 8, 9],
+        horizontal: [5, 6, 6, 7],
+      }}
       width100
     >
-      <Title title={title} color={variant === "dark" ? "white" : "black"} />
+      <Title title={title} color="white" />
       {strokes && variant === "dark" && (
         <div className={styles.strokes}>
           <Image src={bigStroke} alt="stroke" />

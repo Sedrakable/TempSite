@@ -6,7 +6,7 @@ import {
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
 
-export type ColorType = "white" | "black" | "yellow" | "grey";
+export type ColorType = "white" | "black" | "primary" | "grey";
 
 export const HeadingLevelArray = ["1", "2", "3", "4", "5"] as const;
 

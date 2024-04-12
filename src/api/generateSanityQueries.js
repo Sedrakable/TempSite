@@ -1,105 +1,38 @@
-export const generateQueries = (lang) => {
-  const navbarQuery = `*[_type == 'navbar' && lang == '${lang}'][0]`;
-  const footerQuery = `*[_type == 'footer' && lang == '${lang}'][0]{
+export const generateQueries = () => {
+  const navbarQuery = `*[_type == 'navbar'][0]`;
+  const settingsQuery = `*[_type == 'settings'][0]`;
+  const footerQuery = `*[_type == 'footer'][0]{
       ...,
       legals[]->{
         title,
-        path,
       },
       socials->{
         ...,
         links[],
       },
     }`;
-  const serviceQuery = `*[_type == 'servicePage' && lang == '${lang}'] {
+ 
+  const homeQuery = `*[_type == 'homePage'][0] {
       ...,
-      path,
       title,
-      lang,
       hero{
         ...,
         quote->,
       },
-      features->{
-        features[]->,
-      },
-      processes->{
-        processes[]->{
+      services->,
+      values->,
+      work->{
+        works[]->{
           ...,
-          features[]->,
         },
       },
-      work->{
-        title,
-        works[]->{
-          slug,
-          customImages,
-          thumbnailImage,
-          title,
-          desc,
-          primaryLink,
-        }
-      },
+      images[],
     }`;
-  const aboutQuery = `*[_type == 'aboutPage' && lang == '${lang}'][0] {
-      ...,
-      about->,
-      values->,
-      work->{
-        works[]->,
-      },
-    }`;
-  const contactQuery = `*[_type == 'contactPage' && lang == '${lang}'][0] {
-      ...,
-      title,
-      form->,
-    }`;
-  const homeQuery = `*[_type == 'homePage' && lang == '${lang}'][0] {
-      ...,
-      title,
-      lang,
-      hero{
-        ...,
-        quote->,
-      },
-      services-> {
-        services[]->{
-          path,
-          title,
-          features->{
-            features[]->{
-              title,
-              customImage,
-            }
-          },
-          processes,
-          price
-        },
-      },
-      values->,
-      about->,
-      work->{
-        works[]->{
-          slug,
-          thumbnailImage,
-          customImages,
-          title,
-          desc,
-          primaryLink,
-        },
-      },
-    }`;
-  const legalQuery = `*[_type == 'legalPage' && lang == '${lang}']`;
-  const notFoundQuery = `*[_type == 'notFoundPage' && lang == '${lang}'][0]`;
 
   return {
+    settingsQuery,
     navbarQuery,
     footerQuery,
-    serviceQuery,
-    aboutQuery,
-    contactQuery,
     homeQuery,
-    legalQuery,
-    notFoundQuery,
   };
 };

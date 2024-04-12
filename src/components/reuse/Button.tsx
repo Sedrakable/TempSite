@@ -7,15 +7,12 @@ import React, {
 import styles from "./Button.module.scss";
 import cn from "classnames";
 import { Heading } from "./Heading";
-import { ReactComponent as ButtonStroke } from "../../assets/illu/ButtonStroke.svg";
 import { useNavigate } from "react-router-dom";
 
 export interface ButtonProps {
-  variant: "fancy" | "primary" | "secondary";
+  variant: "primary" | "secondary";
   small?: boolean;
   fit?: "grow" | "shrink";
-  onClick?: () => void;
-  path?: string;
   disabled?: boolean;
   className?: string;
 }
@@ -24,18 +21,8 @@ export const Button: FC<PropsWithChildren<
   ButtonProps &
     ButtonHTMLAttributes<HTMLButtonElement> &
     AnchorHTMLAttributes<HTMLAnchorElement>
->> = ({ children, variant, path, disabled, small, fit, ...props }) => {
+>> = ({ children, variant, disabled, small, fit, ...props }) => {
   const navigate = useNavigate();
-
-  const onClick = () => {
-    if (path) {
-      return navigate(path);
-    }
-
-    if (props?.onClick) {
-      props.onClick();
-    }
-  };
 
   const as = props.href ? "a" : "button";
 
@@ -44,7 +31,7 @@ export const Button: FC<PropsWithChildren<
       font="Seto"
       level={small ? "5" : "5"}
       as="h5"
-      color={variant === "secondary" ? "yellow" : "white"}
+      color={variant === "secondary" ? "primary" : "white"}
       className={className}
     >
       {children as string}
@@ -53,7 +40,6 @@ export const Button: FC<PropsWithChildren<
 
   return (
     <div className={styles.container}>
-      {variant === "fancy" && <ButtonStroke className={styles.stroke} />}
       {React.createElement(
         as,
         {
@@ -62,13 +48,11 @@ export const Button: FC<PropsWithChildren<
           }),
           style: { width: fit === "grow" && "100%" },
           ...props,
-          onClick,
           disabled,
           "aria-label": children as string,
         },
         <ButtonHeading />
       )}
-      {variant === "fancy" && <ButtonHeading className={styles.hoverText} />}
     </div>
   );
 };

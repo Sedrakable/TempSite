@@ -34,15 +34,13 @@ export const Inspired: React.FC = () => {
             font="Cursive"
             as="h1"
             level="1"
-            color="yellow"
+            color="primary"
             className={styles.question}
           >
             ?
           </Heading>
         </FlexDiv>
-        <Button variant="fancy" path={`/${lang}${LocalPaths.CONTACT}`}>
-          {translations.buttons.workWithMe}
-        </Button>
+        <Button variant="primary">{translations.buttons.workWithMe}</Button>
       </FlexDiv>
     </FlexDiv>
   );

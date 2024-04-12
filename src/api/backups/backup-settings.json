@@ -1,0 +1,23 @@
+{
+  "_id": "22f497dc-1f80-48d8-84b7-11a6ab8cc770",
+  "_updatedAt": "2024-04-12T02:33:53Z",
+  "buttonBorderRadius": 2,
+  "colors": {
+    "light": {
+      "_type": "color",
+      "hex": "#FFFFFA"
+    },
+    "_type": "themeColor",
+    "dark": {
+      "_type": "color",
+      "hex": "#0D0306"
+    },
+    "primary": {
+      "_type": "color",
+      "hex": "#C42253"
+    }
+  },
+  "_createdAt": "2024-04-12T02:28:05Z",
+  "_rev": "L5GSZvp7J2uKtijbIAdxpY",
+  "_type": "settings"
+}

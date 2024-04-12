@@ -1,0 +1,25 @@
+{
+  "logo": {
+    "_type": "customImage",
+    "alt": "Bnest logo",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-e1838f47f7a6d556aa5b18e78efc3770f7e416b4-1099x257-png",
+        "_type": "reference"
+      }
+    }
+  },
+  "links": [
+    "Home",
+    "About",
+    "Menu",
+    "Contact"
+  ],
+  "_id": "4301cd80-2268-4bb3-8272-698d708b6eb9",
+  "lang": "en",
+  "_updatedAt": "2024-04-12T00:54:28Z",
+  "_createdAt": "2024-04-11T19:16:41Z",
+  "_rev": "EKh3P2lPm1wbYuwVTsZu93",
+  "_type": "navbar"
+}

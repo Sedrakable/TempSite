@@ -4,70 +4,54 @@ import { Paragraph } from "../reuse/Paragraph";
 
 import { Link } from "../reuse/Link";
 import FlexDiv from "../reuse/FlexDiv";
-import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
-import { IFooter, INavBar, LocalPaths } from "../../data.d";
-import { isCta } from "../navbar/Navbar";
+import { ICustomImage, IFooter, INavBar } from "../../data.d";
 import { Socials } from "./Socials";
 import { useAtom } from "jotai";
 import { langData } from "../navbar/LangSwitcher/LangSwitcher";
+import { SanityImage } from "../reuse/SanityImage/SanityImage";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
 };
-const Nav: React.FC<INavBar> = ({ links }) => {
-  const [lang] = useAtom(langData);
-
+const Nav: React.FC<{ links: string[] }> = ({ links }) => {
   return (
     <FlexDiv
       className={styles.links}
-      gapArray={[5]}
+      gapArray={[5, 5, 6, 7]}
       flex={{ x: "center" }}
-      wrap
     >
       {links?.map((link, key) => {
-        if (isCta(link)) {
-          return (
-            <Link path={`/${lang}${link?.link}`} key={key}>
-              <Paragraph level="regular" weight="regular" capitalise clickable>
-                {link?.text}
-              </Paragraph>
-            </Link>
-          );
-        } else {
-          const subLinks = link.ctaArray?.map((link, key) => {
-            return (
-              <Link
-                path={`/${lang}${LocalPaths.SERVICE}${link?.link}`}
-                key={key}
-              >
-                <Paragraph
-                  level="regular"
-                  weight="regular"
-                  capitalise
-                  clickable
-                >
-                  {link?.text}
-                </Paragraph>
-              </Link>
-            );
-          });
-          return subLinks;
-        }
+        return (
+          <Paragraph
+            level="regular"
+            weight="regular"
+            capitalise
+            clickable
+            key={key}
+          >
+            {link}
+          </Paragraph>
+        );
       })}
     </FlexDiv>
   );
 };
 
-const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
+const Logo: React.FC<{ trademark: string; logo: ICustomImage }> = ({
+  trademark,
+  logo,
+}) => {
   return (
     <FlexDiv
-      className={styles.logo}
-      flex={{ direction: "column" }}
+      className={styles.logoWrapper}
+      flex={{ direction: "column", y: "center" }}
       gapArray={[5]}
       padding={{ bottom: [0, 0, 2] }}
     >
-      <LogoHori />
+      <div className={styles.logo}>
+        <SanityImage {...logo} res={30} />
+      </div>
       <Paragraph level="small" weight="weak" color="grey" textAlign="center">
         {trademark}
       </Paragraph>
@@ -103,6 +87,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
   links,
   legals,
   trademark,
+  logo,
   socials,
 }) => {
   return (
@@ -113,7 +98,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
     >
       <Nav links={links} />
       <Line />
-      <Logo trademark={trademark} />
+      <Logo trademark={trademark} logo={logo} />
       <Line />
       <FlexDiv
         flex={{ direction: "column", y: "space-between", x: "flex-start" }}
@@ -131,6 +116,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
 const TabletFooter: React.FC<FooterProps> = ({
   links,
   legals,
+  logo,
   trademark,
   socials,
 }) => {
@@ -140,7 +126,7 @@ const TabletFooter: React.FC<FooterProps> = ({
       flex={{ y: "stretch" }}
       padding={{ top: [7], bottom: [7] }}
     >
-      <Logo trademark={trademark} />
+      <Logo trademark={trademark} logo={logo} />
       <Line />
       <FlexDiv flex={{ direction: "column" }} gapArray={[4]}>
         <Nav links={links} />
@@ -155,6 +141,7 @@ const TabletFooter: React.FC<FooterProps> = ({
 const MobileFooter: React.FC<FooterProps> = ({
   links,
   legals,
+  logo,
   trademark,
   socials,
 }) => {
@@ -167,7 +154,7 @@ const MobileFooter: React.FC<FooterProps> = ({
     >
       <Socials {...socials} />
       <Nav links={links} />
-      <Logo trademark={trademark} />
+      <Logo trademark={trademark} logo={logo} />
       <Legal legals={legals} />
     </FlexDiv>
   );
