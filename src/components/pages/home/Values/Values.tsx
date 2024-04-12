@@ -33,6 +33,7 @@ const Value: React.FC<IValue & { number: string }> = ({
           font="Seto"
           level="4"
           as="h4"
+          color="black"
           className={styles.title}
           paddingBottomArray={[1]}
         >
@@ -40,7 +41,12 @@ const Value: React.FC<IValue & { number: string }> = ({
         </Heading>
       </FlexDiv>
 
-      <Paragraph level="small" textAlign="left" className={styles.desc}>
+      <Paragraph
+        level="small"
+        textAlign="left"
+        className={styles.desc}
+        color="black"
+      >
         {desc}
       </Paragraph>
     </FlexDiv>
@@ -52,7 +58,7 @@ export const Values: React.FC<IValues> = ({ values }) => {
   const translations = getTranslations(lang);
 
   return (
-    <Block title={translations.blockTitles.values} variant="dark">
+    <Block title={translations.blockTitles.values} variant="light">
       <FlexDiv
         gapArray={[6]}
         flex={{ x: "flex-start", y: "space-between" }}

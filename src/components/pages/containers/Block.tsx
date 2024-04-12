@@ -7,7 +7,13 @@ import cn from "classnames";
 import { Title } from "../../reuse/Title/Title";
 const bigStroke = require("../../../assets/photos/BigStroke.png");
 
-export const BlockVariants = ["grid", "dark", "fabric", "fabric-hori"] as const;
+export const BlockVariants = [
+  "grid",
+  "dark",
+  "fabric",
+  "fabric-hori",
+  "light",
+] as const;
 
 export type BlockVariantType = typeof BlockVariants[number];
 
@@ -27,9 +33,7 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
   return (
     <FlexDiv
       flex={{ direction: "column" }}
-      className={cn(styles.block, styles[variant], {
-        [styles.light]: variant !== "dark" && shadow,
-      })}
+      className={cn(styles.block, styles[variant])}
       gapArray={[5, 6, 6, 7]}
       padding={{
         top: [6, 7, 7, 8],
@@ -38,7 +42,7 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
       }}
       width100
     >
-      <Title title={title} color="white" />
+      <Title title={title} color={variant == "light" ? "primary" : "white"} />
       {strokes && variant === "dark" && (
         <div className={styles.strokes}>
           <Image src={bigStroke} alt="stroke" />

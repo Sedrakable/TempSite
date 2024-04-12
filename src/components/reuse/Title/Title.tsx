@@ -25,7 +25,7 @@ export const Title: React.FC<PropsWithChildren<TitleProps>> = ({
       >
         {title}
       </Heading>
-      <ButtonStroke />
+      {/* <ButtonStroke /> */}
     </FlexDiv>
   );
 };

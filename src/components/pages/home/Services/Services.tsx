@@ -37,7 +37,7 @@ export const Services: React.FC<IServices> = ({ services }) => {
   const translations = getTranslations(lang);
 
   return (
-    <Block title={translations.blockTitles.services} variant="grid">
+    <Block title={translations.blockTitles.services} variant="fabric">
       <FlexDiv
         gapArray={[6]}
         flex={{ y: "flex-start" }}
