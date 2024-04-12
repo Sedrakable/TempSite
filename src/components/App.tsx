@@ -46,7 +46,7 @@ const App = () => {
         <div className={styles.page}>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<HomePage {...homePageData} />} />
+              <Route path="*" element={<HomePage {...homePageData} />} />
             </Routes>
           </Suspense>
         </div>
